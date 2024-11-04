@@ -5,13 +5,11 @@ namespace View_Example_17._0._02
     public partial class FrmHilos : Form
     {
         private static Random random;
-        private CancellationTokenSource cancellationTokenSource;
+        private CancellationTokenSource? cancellationTokenSource;
         private List<Task> hilos;
 
-        static FrmHilos()
-        {
-            random = new Random();
-        }
+        static FrmHilos() => random = new Random();
+        
         public FrmHilos()
         {
             InitializeComponent();
@@ -21,11 +19,18 @@ namespace View_Example_17._0._02
         private void FrmHilos_Paint(object sender, PaintEventArgs e)
         {
 
-
         }
 
-        private void FrmHilos_Load(object sender, EventArgs e)
+        private void FrmHilos_Load(object sender, EventArgs e) => IniciarHilos();
+        
+        private void IniciarHilos()
         {
+            progressBar1.Value = 0;
+            progressBar2.Value = 0;
+            progressBar3.Value = 0;
+            progressBar4.Value = 0;
+            progressBar5.Value = 0;
+
             cancellationTokenSource = new();
             CancellationToken cancellationToken = cancellationTokenSource.Token;
 
@@ -46,17 +51,32 @@ namespace View_Example_17._0._02
             hilos.Add(task5);
         }
 
-
-
         private void IniciarProceso(ProgressBar barraProgreso, Label label)
         {
-            while (barraProgreso.Value < barraProgreso.Maximum && !cancellationTokenSource.IsCancellationRequested)
+            while (barraProgreso.Value < barraProgreso.Maximum && !cancellationTokenSource!.IsCancellationRequested)
             {
                 Thread.Sleep(random.Next(100, 1000));
                 IncrementarBarraProgreso(barraProgreso, label, Task.CurrentId!.Value);
             }
 
             FinalizarProceso(barraProgreso, label);
+        }
+
+        private void FinalizarProceso(ProgressBar barraProgreso, Label label)
+        {
+            if (InvokeRequired)
+            {
+                Action<ProgressBar, Label> finalizarProceso = FinalizarProceso;
+                object[] parametros = [barraProgreso, label];
+                Invoke(finalizarProceso, parametros);
+            }
+            else
+            {
+                if (barraProgreso.Value == barraProgreso.Maximum)
+                    label.Text = "Proceso finalizado";
+                else
+                    label.Text = "Proceso cancelado";
+            }
         }
 
         private void IncrementarBarraProgreso(ProgressBar barraProgreso, Label label, int idHilo)
@@ -81,28 +101,8 @@ namespace View_Example_17._0._02
             }
         }
 
-        private void FinalizarProceso(ProgressBar barraProgreso, Label label)
-        {
-            if (InvokeRequired)
-            {
-                Action<ProgressBar, Label> finalizarProceso = FinalizarProceso;
-                object[] parametros = [barraProgreso, label];
-                Invoke(finalizarProceso, parametros);
-            }
-            else
-            {
-                if (barraProgreso.Value == barraProgreso.Maximum)
-                    label.Text = "Proceso finalizado";
-                else
-                    label.Text = "Proceso cancelado";
-            }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            cancellationTokenSource.Cancel();
-        }
-
+        private void btnCancelar_Click(object sender, EventArgs e) => cancellationTokenSource?.Cancel();
+       
         private void btnMostrar_Click(object sender, EventArgs e) => MessageBox.Show(textBox1.Text, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -111,18 +111,26 @@ namespace View_Example_17._0._02
             StringBuilder stringBuilder = new();
             foreach (Task hilo in hilos)
             {
-
+                stringBuilder.AppendLine($"Hilo: {hilo.Id}");
+                string mensaje = hilo.IsCompleted ? $"Esta Completado" : $"En estado: {hilo.Status}";
+                stringBuilder.AppendLine(mensaje);
+                stringBuilder.AppendLine();
             }
+
+            MessageBox.Show(stringBuilder.ToString(), "Informacion de hilos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btnReiniciar_Click(object sender, EventArgs e)
+        private async void btnReiniciar_Click(object sender, EventArgs e)
         {
+            cancellationTokenSource?.Cancel();
 
+            while(!hilos.All(hilo => hilo.IsCompleted))
+                await Task.Delay(10000);
+            
+            IniciarHilos();
         }
 
-        private void FrmHilos_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            cancellationTokenSource.Cancel();
-        }
+        private void FrmHilos_FormClosing(object sender, FormClosingEventArgs e) => cancellationTokenSource?.Cancel();
+       
     }
 }
