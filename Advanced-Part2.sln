@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "17. P. multi-hilo y Concurr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View Example 17.0.01", "17. P. multi-hilo y Concurrencia\View Example 17.0.01\View Example 17.0.01.csproj", "{F3562EF4-B802-4386-8F99-E86681260DCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View Example 17.0.02", "17. P. multi-hilo y Concurrencia\View Example 17.0.02\View Example 17.0.02.csproj", "{2D476D61-9AE5-460E-B51A-9DF30EFC4937}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 		{F3562EF4-B802-4386-8F99-E86681260DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3562EF4-B802-4386-8F99-E86681260DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3562EF4-B802-4386-8F99-E86681260DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D476D61-9AE5-460E-B51A-9DF30EFC4937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D476D61-9AE5-460E-B51A-9DF30EFC4937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D476D61-9AE5-460E-B51A-9DF30EFC4937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D476D61-9AE5-460E-B51A-9DF30EFC4937}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F3562EF4-B802-4386-8F99-E86681260DCE} = {46E77E31-1F96-4B7A-BDAD-A155BCA0F80F}
+		{2D476D61-9AE5-460E-B51A-9DF30EFC4937} = {46E77E31-1F96-4B7A-BDAD-A155BCA0F80F}
 	EndGlobalSection
 EndGlobal

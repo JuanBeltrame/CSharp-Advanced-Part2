@@ -58,15 +58,16 @@ internal class Program
     {
         random = new Random();
 
-        //Task hilo = new(EjecutarSincronico);
-        //hilo.Start();
+        // Task hilo = new(EjecutarSincronico);
+        // hilo.Start();
+        // hilo.Wait();
 
         // Instanciar e iniciar un hilo al mismo tiempo // Me ahorra el new y el start()
-        Task hilo = Task.Run(EjecutarSincronico);
+        Task hiloSinc = Task.Run(EjecutarSincronico);
+        Task hiloParallel = Task.Run(EjecutarEnParalelo);
 
-        EjecutarEnParalelo();
-
-        hilo.Wait();
+        // Esperar a que ambos hilos terminen
+        Task.WaitAll(hiloSinc, hiloParallel);   
 
         Console.WriteLine("Finalizaron todas las tareas!");
     }
