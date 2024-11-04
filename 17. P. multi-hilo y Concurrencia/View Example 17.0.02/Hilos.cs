@@ -38,15 +38,17 @@ namespace View_Example_17._0._02
 
         private void IncrementarBarraProgreso(ProgressBar barraProgreso, Label label, int idHilo)
         {
+            // InvokeRequired retorna true si requiero una invocacion desde el hilo que creo al formulario
             if (InvokeRequired)
             {
                 Action<ProgressBar, Label, int> delegado = IncrementarBarraProgreso;
-                Invoke(delegado);
+                object[] parametros = [barraProgreso, label, idHilo];
+                Invoke(delegado, parametros);
             }
             else
             {
                 barraProgreso.Increment(1);
-                label.Text = $"Hilo N: {Task.CurrentId} - {barraProgreso.Value}%";
+                label.Text = $"Hilo N: {idHilo} - {barraProgreso.Value}%";
             }
         }
 
