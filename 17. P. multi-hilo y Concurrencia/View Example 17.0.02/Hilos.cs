@@ -1,9 +1,12 @@
+using System.Text;
+
 namespace View_Example_17._0._02
 {
     public partial class FrmHilos : Form
     {
         private static Random random;
         private CancellationTokenSource cancellationTokenSource;
+        private List<Task> hilos;
 
         static FrmHilos()
         {
@@ -12,6 +15,7 @@ namespace View_Example_17._0._02
         public FrmHilos()
         {
             InitializeComponent();
+            hilos = new();
         }
 
         private void FrmHilos_Paint(object sender, PaintEventArgs e)
@@ -27,14 +31,19 @@ namespace View_Example_17._0._02
 
             Task task1 = new Task(() => IniciarProceso(progressBar1, label1), cancellationToken);
             task1.Start();
+            hilos.Add(task1);
 
             Task task2 = Task.Run(() => IniciarProceso(progressBar2, label2), cancellationToken);
+            hilos.Add(task2);
 
             Task task3 = Task.Run(() => IniciarProceso(progressBar3, label3), cancellationToken);
+            hilos.Add(task3);
 
             Task task4 = Task.Run(() => IniciarProceso(progressBar4, label4), cancellationToken);
+            hilos.Add(task4);
 
             Task task5 = Task.Run(() => IniciarProceso(progressBar5, label5), cancellationToken);
+            hilos.Add(task5);
         }
 
 
@@ -83,15 +92,9 @@ namespace View_Example_17._0._02
             else
             {
                 if (barraProgreso.Value == barraProgreso.Maximum)
-                {
                     label.Text = "Proceso finalizado";
-
-                }
                 else
-                {
                     label.Text = "Proceso cancelado";
-
-                }
             }
         }
 
@@ -105,7 +108,11 @@ namespace View_Example_17._0._02
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
+            StringBuilder stringBuilder = new();
+            foreach (Task hilo in hilos)
+            {
 
+            }
         }
 
         private void btnReiniciar_Click(object sender, EventArgs e)
