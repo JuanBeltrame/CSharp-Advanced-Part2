@@ -22,7 +22,7 @@ namespace View_Example_17._0._02
 
         private void FrmHilos_Load(object sender, EventArgs e)
         {
-            cancellationTokenSource = new ();
+            cancellationTokenSource = new();
             CancellationToken cancellationToken = cancellationTokenSource.Token;
 
             Task task1 = new Task(() => IniciarProceso(progressBar1, label1), cancellationToken);
@@ -46,6 +46,8 @@ namespace View_Example_17._0._02
                 Thread.Sleep(random.Next(100, 1000));
                 IncrementarBarraProgreso(barraProgreso, label, Task.CurrentId!.Value);
             }
+
+            FinalizarProceso(barraProgreso, label);
         }
 
         private void IncrementarBarraProgreso(ProgressBar barraProgreso, Label label, int idHilo)
@@ -99,7 +101,7 @@ namespace View_Example_17._0._02
         }
 
         private void btnMostrar_Click(object sender, EventArgs e) => MessageBox.Show(textBox1.Text, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        
+
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
@@ -111,5 +113,9 @@ namespace View_Example_17._0._02
 
         }
 
+        private void FrmHilos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            cancellationTokenSource.Cancel();
+        }
     }
 }

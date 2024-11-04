@@ -199,6 +199,7 @@
             Controls.Add(progressBar1);
             Name = "FrmHilos";
             Text = "Form1";
+            FormClosing += FrmHilos_FormClosing;
             Load += FrmHilos_Load;
             Paint += FrmHilos_Paint;
             ResumeLayout(false);
