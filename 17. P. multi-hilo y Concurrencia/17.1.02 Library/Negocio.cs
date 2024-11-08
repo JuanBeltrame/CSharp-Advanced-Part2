@@ -22,13 +22,16 @@ namespace _17._1._02_Library
             clientes = new();
         }
 
-        public void ComenzarAtencion()
+        public List<Task> ComenzarAtencion()
         {
+            List<Task> hilos = new();
             foreach(Caja caja in cajas)
-                caja.IniciarAtencion();
+                hilos.Add(caja.IniciarAtencion());
 
-            Task taskSimulacionClientes = Task.Run(GenerarClientes);
-            Task taskAsignacionCajas = Task.Run(AsignarCajas);
+            hilos.Add(Task.Run(GenerarClientes));
+            hilos.Add(Task.Run(AsignarCajas));
+
+            return hilos;
         }
 
         private void GenerarClientes()
@@ -44,7 +47,10 @@ namespace _17._1._02_Library
         private void AsignarCajas()
         {
             cajas.OrderBy(c => c.CantidadDeClientesALaEspera);
-            Caja caja = cajas.FirstOrDefault();
+            Caja caja = cajas.First()!;
+            if(clientes.TryDequeue(out string? cliente))
+                caja.AgregarCliente(cliente);
+           
         }
     }
 }
