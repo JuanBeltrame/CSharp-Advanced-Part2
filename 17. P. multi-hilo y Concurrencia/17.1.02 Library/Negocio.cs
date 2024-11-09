@@ -16,7 +16,7 @@ namespace _17._1._02_Library
 
         static Negocio() => realNameGenerator = new();
 
-        public Negocio (List<Caja> cajas)
+        public Negocio(List<Caja> cajas)
         {
             this.cajas = cajas;
             clientes = new();
@@ -25,7 +25,7 @@ namespace _17._1._02_Library
         public List<Task> ComenzarAtencion()
         {
             List<Task> hilos = new();
-            foreach(Caja caja in cajas)
+            foreach (Caja caja in cajas)
                 hilos.Add(caja.IniciarAtencion());
 
             hilos.Add(Task.Run(GenerarClientes));
@@ -40,17 +40,22 @@ namespace _17._1._02_Library
             {
                 string cliente = realNameGenerator!.Generate();
                 clientes.Enqueue(cliente);
+                Thread.Sleep(1000);
             }
             while (true);
         }
 
         private void AsignarCajas()
         {
-            cajas.OrderBy(c => c.CantidadDeClientesALaEspera);
-            Caja caja = cajas.First()!;
-            if(clientes.TryDequeue(out string? cliente))
-                caja.AgregarCliente(cliente);
-           
+            do
+            {
+                Caja caja = cajas.OrderBy(c => c.CantidadDeClientesALaEspera).First();
+                clientes.TryDequeue(out string? cliente);
+                
+                if(!string.IsNullOrWhiteSpace(cliente))
+                    caja.AgregarCliente(cliente);
+            }
+            while (true);
         }
     }
 }
