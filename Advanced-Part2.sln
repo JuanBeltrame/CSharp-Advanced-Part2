@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17.1.02 Library", "17. P. m
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17.1.02 View", "17. P. multi-hilo y Concurrencia\17.1.02 View\17.1.02 View.csproj", "{B6793184-9700-4D88-86F4-0D3250161993}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View Example 17.0.03", "17. P. multi-hilo y Concurrencia\View Example 17.0.03\View Example 17.0.03.csproj", "{33DBCE9A-6CD8-4544-B4E8-20A5907685AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{B6793184-9700-4D88-86F4-0D3250161993}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6793184-9700-4D88-86F4-0D3250161993}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6793184-9700-4D88-86F4-0D3250161993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33DBCE9A-6CD8-4544-B4E8-20A5907685AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DBCE9A-6CD8-4544-B4E8-20A5907685AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DBCE9A-6CD8-4544-B4E8-20A5907685AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DBCE9A-6CD8-4544-B4E8-20A5907685AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,5 +50,6 @@ Global
 		{2D476D61-9AE5-460E-B51A-9DF30EFC4937} = {46E77E31-1F96-4B7A-BDAD-A155BCA0F80F}
 		{7CE68428-FE50-4FE9-876B-FE815ADB2AE4} = {46E77E31-1F96-4B7A-BDAD-A155BCA0F80F}
 		{B6793184-9700-4D88-86F4-0D3250161993} = {46E77E31-1F96-4B7A-BDAD-A155BCA0F80F}
+		{33DBCE9A-6CD8-4544-B4E8-20A5907685AD} = {46E77E31-1F96-4B7A-BDAD-A155BCA0F80F}
 	EndGlobalSection
 EndGlobal
