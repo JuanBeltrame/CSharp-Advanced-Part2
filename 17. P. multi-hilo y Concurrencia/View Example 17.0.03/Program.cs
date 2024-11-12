@@ -9,9 +9,19 @@
 
     static void Reloj(DateTime dateTime)
     {
+        Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+        Console.WriteLine(Task.CurrentId);
+        Console.WriteLine($"Tiempo transcurrido{dateTime}");
+        Thread.Sleep(1000);
+    }
+
+    static void MetodoSinParametros()
+    {
         while (true)
         {
-            Console.WriteLine($"Tiempo transcurrido{dateTime}");
+            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            Console.WriteLine(Task.CurrentId);
+            Console.WriteLine($"Tiempo transcurrido en metodo sin parametros {DateTime.Now}");
             Thread.Sleep(1000);
         }
     }
@@ -28,9 +38,23 @@
         //Task tareaHiloSecundario = new(action);
 
         // METODO 3
-        Task tareaHiloSecundario = new(() => { Reloj(DateTime.Now); });
-        tareaHiloSecundario.Start();
-        
+        //Task tareaHiloSecundario = new(() => { Reloj(DateTime.Now); });
+        //tareaHiloSecundario.Start();
+
+        // METODO 4
+        //Action a = () =>
+        //{
+        //    while (true)
+        //    {
+        //        Console.WriteLine("Hilo secundario");
+
+        //    }
+        //};
+
+        // METODO 5
+        Task tarea = Task.Run(MetodoSinParametros);
+
+
         ConsoleKey teclaPresionada;
 
         do
