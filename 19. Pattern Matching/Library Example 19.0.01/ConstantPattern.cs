@@ -8,5 +8,7 @@
             if (valor is 10) // Constant Pattern
                 Console.WriteLine("valor es exactamente 10.");
         }
+
+
     }
 }
