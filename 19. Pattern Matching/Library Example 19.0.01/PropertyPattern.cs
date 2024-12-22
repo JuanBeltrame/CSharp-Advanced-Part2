@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Library_Example_19._0._01
 {
-    internal class PropertyPattern
+    public record Person(string Name, int Age);
+    public class PropertyPattern
     {
+
     }
 }
