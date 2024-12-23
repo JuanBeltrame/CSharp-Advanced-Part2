@@ -12,7 +12,8 @@ TypePattern.PrintType(1);
 TypePattern.PrintType("1");
 TypePattern.Caso03(new List<object> { 42, "C# Rocks!", DateTime.Now });
 
-
-
+Console.WriteLine("-----Property Pattern-----");
+PropertyPattern.GreetPerson(new Person("Bob", 30));
+PropertyPattern.PrintPersonInfo(new Person("Bob", 30));
 
 
