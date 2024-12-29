@@ -23,3 +23,9 @@ NullPattern.Caso01();
 NullPattern.Caso02();
 Console.WriteLine();
 
+Console.WriteLine("-----Var Pattern-----");
+VarPattern.PrintObjectDetails(1);
+Console.WriteLine(VarPattern.DescribeType(1));
+Console.WriteLine();
+
+Console.WriteLine("-----Declaration Pattern-----");
