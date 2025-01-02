@@ -36,3 +36,8 @@ Console.WriteLine(DeclarationPattern.DescribeType(1));
 Console.WriteLine(DeclarationPattern.DescribeType("Hello World"));
 Console.WriteLine(DeclarationPattern.DescribeType(DateTime.Now));
 Console.WriteLine();
+
+Console.WriteLine("-----Tuple Pattern-----");
+TuplePattern.PrintTupleDetails((1, 2), "TwoIntegers");
+TuplePattern.PrintTupleDetails((1, 2, 3), "ThreeIntegers");
+TuplePattern.PrintTupleDetails((1, 2, 3, 4), "FourIntegers", "FourIntegers");
