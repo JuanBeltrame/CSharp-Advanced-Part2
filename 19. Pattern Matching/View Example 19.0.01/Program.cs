@@ -29,3 +29,10 @@ Console.WriteLine(VarPattern.DescribeType(1));
 Console.WriteLine();
 
 Console.WriteLine("-----Declaration Pattern-----");
+DeclarationPattern.PrintObjectDetails(1);
+DeclarationPattern.PrintObjectDetails("Hello World");
+DeclarationPattern.PrintObjectDetails(DateTime.Now);
+Console.WriteLine(DeclarationPattern.DescribeType(1));
+Console.WriteLine(DeclarationPattern.DescribeType("Hello World"));
+Console.WriteLine(DeclarationPattern.DescribeType(DateTime.Now));
+Console.WriteLine();

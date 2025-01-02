@@ -17,5 +17,19 @@ namespace Library_Example_19._0._01
             else
                 Console.WriteLine($"Unknown type: {obj.GetType().Name}");
         }
+
+        public static string DescribeType(object obj)
+        {
+            switch (obj)
+            {
+                case int i:
+                    return $"Object type: {i.GetType().Name}, Value: {i}";
+                case string s:
+                    return $"Object type: {s.GetType().Name}, Value: {s}";
+                default:
+                    return $"Unknown type: {obj.GetType().Name}";
+            }
+        }
+
     }
 }
