@@ -41,3 +41,4 @@ Console.WriteLine("-----Tuple Pattern-----");
 TuplePattern.PrintTupleDetails((1, 2), "TwoIntegers");
 TuplePattern.PrintTupleDetails((1, 2, 3), "ThreeIntegers");
 TuplePattern.PrintTupleDetails((1, 2, 3, 4), "FourIntegers", "FourIntegers");
+TuplePattern.VerificarPares(4, 5);

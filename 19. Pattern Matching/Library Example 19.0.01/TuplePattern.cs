@@ -44,6 +44,15 @@ namespace Library_Example_19._0._01
                     break;
             }
         }
+
+        public static void VerificarPares(int a, int b)
+        {
+            if ((a, b) is (1, 2))
+                Console.WriteLine("a es 1 y b es 2");
+            else
+                Console.WriteLine("Combinación diferente");
+        }
+
     }
 }
 
