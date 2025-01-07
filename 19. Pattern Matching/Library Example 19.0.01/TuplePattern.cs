@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace Library_Example_19._0._01
 {
+    public class Persona
+    {
+        public int Edad { get; set; }
+        public string? Ciudad { get; set; }
+    }
+
     public class TuplePattern
     {
         public static void PrintTupleDetails(object obj, params string[] messages)
@@ -52,6 +58,66 @@ namespace Library_Example_19._0._01
             else
                 Console.WriteLine("Combinación diferente");
         }
+
+        public string EvaluarEstado1(int edad, bool esEstudiante)
+        {
+            if ((edad, esEstudiante) is ( >= 18, true))
+            {
+                return "Adulto y Estudiante";
+            }
+            else if ((edad, esEstudiante) is ( >= 18, false))
+            {
+                return "Adulto sin Estudio";
+            }
+            else if ((edad, esEstudiante) is ( < 18, _))
+            {
+                return "Menor de Edad";
+            }
+            else
+            {
+                return "Estado desconocido";
+            }
+        }
+
+        public string EvaluarEstado2(int edad, bool esEstudiante) => (edad, esEstudiante) switch
+        {
+            ( < 18, _) => "Menor de edad",
+            ( >= 18, true) => "Adulto Estudiante",
+            ( >= 18, false) => "Adulto"
+        };
+
+        public void ClasificarPuntuaciones(int math, int science)
+        {
+            switch ((math, science))
+            {
+                case ( >= 90, >= 90):
+                    Console.WriteLine("Excelente en ambas materias");
+                    break;
+                case ( >= 90, _):
+                    Console.WriteLine("Excelente en Matemáticas");
+                    break;
+                case (_, >= 90):
+                    Console.WriteLine("Excelente en Ciencias");
+                    break;
+                default:
+                    Console.WriteLine("Buen desempeño general");
+                    break;
+            }
+        }
+
+        
+        public void EvaluarPersona(Persona persona)
+        {
+            if ((persona.Edad, persona.Ciudad) is ( >= 18, "Madrid"))
+            {
+                Console.WriteLine("Adulto viviendo en Madrid");
+            }
+            else
+            {
+                Console.WriteLine("Otro caso");
+            }
+        }
+
 
     }
 }
