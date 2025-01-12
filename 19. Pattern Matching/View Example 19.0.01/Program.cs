@@ -42,3 +42,25 @@ TuplePattern.PrintTupleDetails((1, 2), "TwoIntegers");
 TuplePattern.PrintTupleDetails((1, 2, 3), "ThreeIntegers");
 TuplePattern.PrintTupleDetails((1, 2, 3, 4), "FourIntegers", "FourIntegers");
 TuplePattern.VerificarPares(4, 5);
+
+Console.WriteLine("-----Discard Pattern-----");
+// Llamada al método estático Describe (no requiere instancia de la clase).
+string resultado1 = DiscardPattern.Describe("Hello World!");
+Console.WriteLine($"Describe con string: {resultado1}");
+
+string resultado2 = DiscardPattern.Describe(42);
+Console.WriteLine($"Describe con int: {resultado2}");
+
+string resultado3 = DiscardPattern.Describe(3.14);
+Console.WriteLine($"Describe con double: {resultado3}");  // Tipo desconocido
+
+// Para los métodos no estáticos, creamos una instancia de la clase.
+DiscardPattern discardExample = new DiscardPattern();
+
+// Llamada a CheckIfInt (método de instancia).
+discardExample.CheckIfInt();
+
+// Llamada a DeconstructExample (método de instancia).
+discardExample.DeconstructExample();
+
+Console.ReadLine();
