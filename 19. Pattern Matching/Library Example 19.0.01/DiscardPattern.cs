@@ -9,7 +9,7 @@ namespace Library_Example_19._0._01
     public class DiscardPattern
     {
         // Campo de ejemplo
-        object valor = 100;
+        static object valor = 100;
 
         /// <summary>
         /// Ejemplo de discard pattern en un switch expression.
@@ -29,7 +29,7 @@ namespace Library_Example_19._0._01
         /// <summary>
         /// Ejemplo de discard pattern en un 'if' usando 'is'.
         /// </summary>
-        public void CheckIfInt()
+        public static void CheckIfInt()
         {
             if (valor is int _)
             {
@@ -47,7 +47,7 @@ namespace Library_Example_19._0._01
         /// Ejemplo de discard pattern en la deconstrucción de una tupla.
         /// Usamos '_' para descartar el segundo valor.
         /// </summary>
-        public void DeconstructExample()
+        public static void DeconstructExample()
         {
             // Supongamos que tenemos un método local que devuelve una tupla (nombre, apellido, edad).
             (string nombre, string apellido, int edad) = ObtenerPersona();
@@ -62,7 +62,7 @@ namespace Library_Example_19._0._01
         /// <summary>
         /// Método auxiliar que devuelve una tupla (nombre, apellido, edad).
         /// </summary>
-        private (string, string, int) ObtenerPersona()
+        private static (string, string, int) ObtenerPersona()
         {
             // Ejemplo de datos simulados
             return ("Juan", "Pérez", 30);
