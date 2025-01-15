@@ -37,6 +37,26 @@ Console.WriteLine(DeclarationPattern.DescribeType("Hello World"));
 Console.WriteLine(DeclarationPattern.DescribeType(DateTime.Now));
 Console.WriteLine();
 
+Console.WriteLine("-----POSITIONAL PATTERN-----");
+Coordinates point = new Coordinates(3, 5);
+if (point is (3, 5)) // Se cumple si X = 3 e Y = 5
+    Console.WriteLine("Coordenadas (3, 5)");
+
+if (point is (var xValue, var yValue))
+    // También puedes capturar los valores en variables si deseas procesarlas:
+    Console.WriteLine($"x: {xValue}, y: {yValue}");
+Console.WriteLine();
+
+static string identify_pattern(Coordinates sample) => sample switch
+{
+    // switchs statement that return corresponding return values
+    Coordinates(1, 1) => "Point lies in the first quadrant of cartesian plane.",
+    Coordinates(-1, 1) => "Point lies in the second quadrant of cartesian plane.",
+    Coordinates(-1, -1) => "Point lies in the third quadrant of cartesian plane.",
+    Coordinates(1, -1) => "Point lies in the fourth quadrant of cartesian plane.",
+    _ => "Hmm, I am not sure about this point. You will have to plot it and find out!",
+};
+
 Console.WriteLine("-----TUPLE PATTERN-----");
 TuplePattern.PrintTupleDetails((1, 2), "TwoIntegers");
 TuplePattern.PrintTupleDetails((1, 2, 3), "ThreeIntegers");

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Library_Example_19._0._01
 {
+
     // declares struct with a single variable named X
-    public readonly struct Coordinates
+    public struct Coordinates 
     {
         public int X { get; }
         public int Y { get; }
@@ -25,5 +27,6 @@ namespace Library_Example_19._0._01
             x = X;
             y = Y;
         }
+
     }
 }
