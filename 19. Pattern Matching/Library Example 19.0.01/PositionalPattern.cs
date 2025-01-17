@@ -15,18 +15,10 @@ namespace Library_Example_19._0._01
         public int Y { get; }
 
         // Constructor para la estructura
-        public Coordinates(int x, int y)
-        {
-            X = x;
-            Y = y;
-        }
+        public Coordinates(int x, int y) => (X, Y) = (x, y);
 
         // Método deconstrucción para asignar valores a variables separadas
-        public void Deconstruct(out int x, out int y)
-        {
-            x = X;
-            y = Y;
-        }
+        public void Deconstruct(out int x, out int y) => (x, y) = (X, Y);
 
     }
 }
