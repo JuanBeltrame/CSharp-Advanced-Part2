@@ -1,9 +1,12 @@
 ﻿using Library_Example_19._0._01;
 using System;
+using static Library_Example_19._0._01.ConstantPattern;
+
 
 Console.WriteLine("-----CONSTANT PATTERN-----");
 ConstantPattern.Caso01();
 ConstantPattern.Caso02();
+Console.WriteLine($"TraficLigth: {ConstantPattern.GetTrafficLigt(TrafficLight.Red)}");
 Console.WriteLine();
 
 Console.WriteLine("-----TYPE PATTERN-----");
