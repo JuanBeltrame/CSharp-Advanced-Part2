@@ -5,21 +5,21 @@ VisualStudioVersion = 17.12.35424.110
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18. P. multi-hilo y Concurrencia", "18. P. multi-hilo y Concurrencia", "{46E77E31-1F96-4B7A-BDAD-A155BCA0F80F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18.1.02 Library", "18. P. multi-hilo y Concurrencia\18.1.02 Library\18.1.02 Library.csproj", "{02A5860F-9A07-FC73-3E18-F0AC2B4A3B7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18102Library", "18. P. multi-hilo y Concurrencia\18.1.02 Library\18102Library.csproj", "{02A5860F-9A07-FC73-3E18-F0AC2B4A3B7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18.1.02 View", "18. P. multi-hilo y Concurrencia\18.1.02 View\18.1.02 View.csproj", "{BD2526EA-8A9C-5E13-AC19-20B46671F1DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18102View", "18. P. multi-hilo y Concurrencia\18.1.02 View\18102View.csproj", "{BD2526EA-8A9C-5E13-AC19-20B46671F1DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View Example 18.0.01", "18. P. multi-hilo y Concurrencia\View Example 18.0.01\View Example 18.0.01.csproj", "{4598607D-74DD-C184-573B-1DF910D3F7D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewExample18001", "18. P. multi-hilo y Concurrencia\View Example 18.0.01\ViewExample18001.csproj", "{4598607D-74DD-C184-573B-1DF910D3F7D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View Example 18.0.02", "18. P. multi-hilo y Concurrencia\View Example 18.0.02\View Example 18.0.02.csproj", "{A5AA34CE-D92D-314A-7F35-189D243C7CD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewExample18002", "18. P. multi-hilo y Concurrencia\View Example 18.0.02\ViewExample18002.csproj", "{A5AA34CE-D92D-314A-7F35-189D243C7CD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View Example 18.0.03", "18. P. multi-hilo y Concurrencia\View Example 18.0.03\View Example 18.0.03.csproj", "{293DB160-4CE5-E7AD-C760-61EF9349834F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewExample18003", "18. P. multi-hilo y Concurrencia\View Example 18.0.03\ViewExample18003.csproj", "{293DB160-4CE5-E7AD-C760-61EF9349834F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19. Pattern Matching", "19. Pattern Matching", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View Example 19.0.01", "19. Pattern Matching\View Example 19.0.01\View Example 19.0.01.csproj", "{AFD64738-900F-43BA-B02C-2B7DB0C42C32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewExample19001", "19. Pattern Matching\View Example 19.0.01\ViewExample19001.csproj", "{AFD64738-900F-43BA-B02C-2B7DB0C42C32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library Example 19.0.01", "19. Pattern Matching\Library Example 19.0.01\Library Example 19.0.01.csproj", "{A6551796-5A98-22A5-89BE-A2D90A6821EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryExample19001", "19. Pattern Matching\Library Example 19.0.01\LibraryExample19001.csproj", "{A6551796-5A98-22A5-89BE-A2D90A6821EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
